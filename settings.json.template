@@ -70,6 +70,7 @@
     "website": false,
     "slack": false,
     "github": false,
+    "discord": false,
     "search": true,
     "movement": true,
     "network": true
@@ -132,6 +133,7 @@
   "googleplus": "yourgooglepluspage",
   "bitcointalk": "yourbitcointalktopicvalue",
   "github": "yourgithubusername/yourgithubrepo",
+  "discord": "yourdiscordinviteid",
   "slack": "yourfullslackinviteurl",
   "website": "yourfullwebsiteurl",
 
