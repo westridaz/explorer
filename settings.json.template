@@ -16,7 +16,7 @@
   "symbol": "CHC",
 
   // logo
-  "logo": "/images/chain_dark-128x128.png",
+  "logo": "/images/ipsum_logo.png",
 
   // favicon
   "favicon": "public/favicon.ico",
