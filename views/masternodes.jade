@@ -1,0 +1,62 @@
+extends layout
+
+block content   
+  script.
+    $(document).ready(function(){
+      var ctable = $('#masternode-table').dataTable( {  
+        autoWidth: true,      
+        searching: true,
+        ordering: true,
+        responsive: true,
+        lengthChange: true,
+        processing: true,
+        ajax: {
+          url: '/ext/getmasternodes',
+          dataSrc: function ( json ) {
+            for ( var i=0;i<json.data.length; i++ ) {
+              json.data[i]['lastseen'] = new Date((json.data[i]['lastseen']) * 1000).toUTCString();
+              json.data[i]['lastpaid'] = new Date((json.data[i]['lastpaid']) * 1000).toUTCString();
+            }
+            return json.data;
+          }
+        },
+        columns: [
+          { data: 'rank', width: '3%' },
+          { data: 'network', width: '4%' },  
+          { data: 'addr', width:'10%' },
+          { data: 'version', width:'10%' },
+          { data: 'lastseen', width:'10%' },
+          { data: 'lastpaid', width:'10%' },
+          { data: 'status', width:'10%' },
+        ],
+
+        "fnRowCallback": function( nRow, aData, iDisplayIndex, iDisplayIndexFull ) {
+                    if ( aData['status'] == "ENABLED" )
+                    {
+                        $('td', nRow).addClass('success');
+                    }
+                    else 
+                    {
+                        $('td', nRow).addClass('warning');
+                    }
+                }
+         
+      });
+    });
+  .col-md-12(style="margin-bottom: 4%")
+    .row.text-center(style='margin-bottom:15px;')
+      i #{settings.locale.net_warning}
+    .panel.panel-default
+      .panel-heading
+        strong #{settings.locale.net_connections}
+      table#masternode-table.table.table-bordered.table-striped
+        thead
+          tr
+            th.text-center #{settings.locale.net_address}
+            th.text-center #{settings.locale.net_protocol}           
+            th.text-center #{settings.locale.net_address}
+            th.text-center #{settings.locale.net_subversion}
+            th.text-center #{settings.locale.mn_last_seen}
+            th.text-center #{settings.locale.mn_last_paid}
+            th.text-center #{settings.locale.mn_status}
+        tbody.text-center

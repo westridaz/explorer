@@ -13,6 +13,7 @@
     "menu_movement": "Movement",
     "menu_node": "Nodes",
     "menu_network": "Network",
+    "menu_masternodes": "Masternodes",
 
     // explorer view
     "ex_title": "Block Explorer",
@@ -153,4 +154,10 @@
     "heavy_changein": "Reward change in approximately",
     "heavy_key": "Key",
     "heavy_lastxvotes": "Last 20 votes",
+    
+    // Masternodes
+    "mn_status" : "Satus",
+    "mn_last_seen" : "Last Seen",
+    "mn_last_paid" : "Last Paid",
+    "mn_activ" : "Node active",
 }
