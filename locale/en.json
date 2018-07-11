@@ -160,4 +160,6 @@
     "mn_last_seen" : "Last Seen",
     "mn_last_paid" : "Last Paid",
     "mn_activ" : "Node active",
+    "mn_warning" : "This is a list of all Master Nodes Currently on the Network ordered by the Last Seen from Current to last",
+    "mn_rank" : "Ranks"
 }
