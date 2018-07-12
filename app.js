@@ -1,7 +1,7 @@
 var express = require('express')
   , path = require('path')
   , chaincoinapi = require('chaincoin-node-api')
-  , favicon = require('static-favicon')
+  , favicon = require('serve-favicon')
   , logger = require('morgan')
   , cookieParser = require('cookie-parser')
   , bodyParser = require('body-parser')
