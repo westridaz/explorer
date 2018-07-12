@@ -108,6 +108,11 @@ The wallet connected to Ciquidus must be running with atleast the following flag
     BTC: 1J8Chi5teDJrvBtSuQhioNCHfTNBCcCrPx
 
 ### Known Issues
+**Database Querys are slow.**
+Index are not working correct you need to create the index in the mongodb
+
+    db.addresses.ensureIndex({"a_id":1})
+    db.getCollection('txes').ensureIndex({"txid":1})
 
 **script is already running.**
 
