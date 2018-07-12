@@ -14,7 +14,7 @@
     "cookie-parser": "~1.4.3",
     "body-parser": "~1.18.3",
     "debug": "~0.7.4",
-    "jade": "~1.3.0",
+    "jade": "~1.11.0",
     "chaincoin-node-api": "1.0.4",
     "request": "2.87.0",
     "jsonminify": "0.4.1",
