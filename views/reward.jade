@@ -1,24 +1,21 @@
 extends layout
 
 block content
-  .row(style='margin-top:5px;')
-    .col-md-12(style='text-align:center;')
-      img(src='/images/logo.png' style='width:80px;margin: 0px auto 15px auto;')
   .row
     .col-xs-12.col-md-10.col-md-offset-1
       .panel.panel-default.panel-address-summary
         .panel-heading(style='position:relative;')        
-          strong #{settings.locale.heavy_title} (#{settings.symbol})
+          strong= t('translate.stats_title',{coin : settings.symbol})
 
         table.table.table-bordered.table-striped.summary-table 
           thead
             tr
-              th #{settings.locale.ex_supply} (#{settings.symbol})
-              th #{settings.locale.heavy_cap} (#{settings.symbol})
-              th #{settings.locale.heavy_phase}
-              th #{settings.locale.heavy_maxvote}
-              th #{settings.locale.heavy_reward} 
-              th #{settings.locale.heavy_estnext}
+              th= t('translate.coin_supply',{coin : settings.symbol})
+              thv
+              th= t('translate.phase')
+              th= t('translate.maxvote')
+              th= t('translate.reward')
+              th= t('translate.reward_estimate')
           tbody             
             tr
               td 
@@ -54,7 +51,7 @@ block content
                     }
                   ]
                   new Chart(ctx).Doughnut(data); 
-              h5 #{settings.locale.heavy_changein}
+              h5= t('translate.reward_change_approx')
               h5
                 =heavy.nextin
            
@@ -63,25 +60,25 @@ block content
                 thead
                   tbody     
                     tr
-                      th #{settings.locale.heavy_key}
+                      th= t('translate.key')
                       td   
                     tr
-                      th #{settings.locale.heavy_vote}
+                      th= t('translate.vote')
                       td 
                         div(style="width:20px;height:20px;background-color:#428bca")           
                     tr
-                      th #{settings.locale.heavy_current}
+                      th= t('translate.current_reward')
                       td 
                         div(style="width:20px;height:20px;background-color:#222")   
                     tr
-                      th #{settings.locale.heavy_estnext}
+                      th= t('translate.reward_estimate')
                       td
                         div(style="width:20px;height:20px;background-color:rgba(92,184,92,1.0)") 
           
           .col-md-9
             center
               .row
-                strong #{settings.locale.heavy_lastxvotes}  
+                strong= t('translate.last_n_votes',{votes : 20})
               .row
                 canvas(id="myChart", width="800", height="300", style="margin-left:-30px;margin-top:30px;")
                   script.

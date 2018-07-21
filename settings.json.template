@@ -15,6 +15,10 @@
   // coin symbol
   "symbol": "CHC",
 
+ // language settings
+  "languages" : ["de","es","fr","us"],
+  "language_fallback" : "us",
+  
   // logo
   "logo": "/images/ipsum_logo.png",
 

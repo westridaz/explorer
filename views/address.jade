@@ -26,11 +26,11 @@ block content
         thead
           tr
             if settings.show_sent_received == true
-              th #{settings.locale.total_sent} (#{settings.symbol})
+              th= t('translate.total_sent',{coin : settings.symbol})
             if address.a_id !== 'coinbase'
               if settings.show_sent_received == true
-                th #{settings.locale.total_received} (#{settings.symbol})
-              th #{settings.locale.rl_balance} (#{settings.symbol})
+                th= t('translate.total_received',{coin : settings.symbol})
+              th= t('translate.balance_coin',{coin : settings.symbol})
         tbody             
           tr
             if settings.show_sent_received == true 
@@ -41,12 +41,12 @@ block content
               td #{balance.toFixed(8)}
     .panel.panel-default.hidden-xs
       .panel-heading
-        strong #{settings.locale.ex_latest_transactions}
+        strong= t('translate.latest_transactions')
       table.table.table-bordered.table-striped.history-table
         include ./includes/address_history.jade  
     .panel.panel-default.hidden-lg.hidden-md
       .panel-heading
-        strong #{settings.locale.ex_latest_transactions}
+        strong= t('translate.latest_transactions')
       table.table.table-bordered.table-striped
         include ./includes/address_history.jade    
     .footer-padding

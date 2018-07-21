@@ -4,6 +4,7 @@ html
     title= settings.title
     link(rel='stylesheet', href='/themes/#{settings.theme}/bootstrap.min.css')
     link(rel='stylesheet', href='/vendor/jqplot/jquery.jqplot.css')
+    link(rel='stylesheet', href='/vendor/flags-css/css/flag-icon.min.css')
     link(rel='stylesheet', href='//cdn.datatables.net/plug-ins/725b2a2115b/integration/bootstrap/3/dataTables.bootstrap.css')
     link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
@@ -33,7 +34,7 @@ html
             $("#difficultyHybrid").text(json.data[0].difficultyHybrid);
             $("#hashrate").text(json.data[0].hashrate);
             $("#lastPrice").text(json.data[0].lastPrice.toFixed(8));
-            $("#lblConnections").text(json.data[0].connections + ' connections');
+            $("#lblConnections").text(json.data[0].connections + 'connections');
             $("#lblBlockcount").text(json.data[0].blockcount + ' blocks');
             $("#lblX1").text(' ');
           }});
@@ -88,7 +89,7 @@ html
       .container-fluid
         .navbar-header
           button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar-collapse')
-            span.sr-only Toggle navigation
+            span.sr-only= t('translate.toggle')
             span.icon-bar
             span.icon-bar
             span.icon-bar
@@ -98,60 +99,59 @@ html
             li#home
               a.navbar-link(href='/')
                 span.glyphicon.glyphicon-search
-                span.menu-text #{settings.locale.menu_explorer}
+                span.menu-text= t('translate.explorer')
             if settings.heavy == true
               li#reward
                 a.navbar-link(href='/reward')
                   span.fa.fa-star
-                  span.menu-text #{settings.locale.menu_reward}
+                  span.menu-text= t('translate.reward')
             if settings.display.movement == true
               li#movement
                 a.navbar-link.loading(href='/movement')
                   span.fa.fa-money
-                  span.menu-text #{settings.locale.menu_movement}
+                  span.menu-text= t('translate.movement')
             if settings.display.masternodes == true
               li#masternodes
                 a.navbar-link(href='/masternodes')
                   span.fa.fa-share-alt
-                  span.menu-text #{settings.locale.menu_masternodes}
+                  span.menu-text= t('translate.masternodes')
             if settings.display.network == true
               li#network
                 a.navbar-link(href='/network')
                   span.fa.fa-share-alt
-                  span.menu-text #{settings.locale.menu_network}
+                  span.menu-text= t('translate.network')
             if settings.display.richlist == true
               li#richlist
                 a.navbar-link(href='/richlist')
                   span.fa.fa-btc
-                  span.menu-text #{settings.locale.menu_richlist}
+                  span.menu-text= t('translate.richlist')
             if settings.display.markets == true
               li#markets
                 a.navbar-link.loading(href='/markets/#{settings.markets.default}')
                   span.fa.fa-line-chart
-                  span.menu-text #{settings.locale.menu_markets}
+                  span.menu-text= t('translate.markets')
             if settings.display.api == true
               li#info
                 a.navbar-link(href='/info')
                   span.glyphicon.glyphicon-info-sign
-                  span.menu-text #{settings.locale.menu_api}
+                  span.menu-text= t('translate.api')
 
+          ul.nav.navbar-nav.navbar-right
+              li.dropdown
+                a.dropdown-toggle(href="/?lng=#{currentlang}", data-toggle="dropdown",data-hover="dropdown" ,data-close-others="false", role="button")
+                  span(class="flag-icon flag-icon-#{currentlang}")
+                  span.menu-text= t('language.'+currentlang)
+                ul.dropdown-menu
+                    each lang in settings.languages
+                      li: a.navbar-link(href="/?lng=#{lang}")
+                            span(class="flag-icon flag-icon-#{lang}")
+                            span.menu-text= t('language.'+lang)
     .col-md-12
       .row.text-center
         .col-md-2.col-md-offset-1
           .panel.panel-default.hidden-sm.hidden-xs
             .panel-heading
-              if settings.nethash_units == 'K'
-                strong #{settings.locale.network} (KH/s)
-              else if settings.nethash_units == 'M'
-                strong #{settings.locale.network} (MH/s)
-              else if settings.nethash_units == 'G'
-                strong #{settings.locale.network} (GH/s)
-              else if settings.nethash_units == 'T'
-                strong #{settings.locale.network} (TH/s)
-              else if settings.nethash_units == 'P'
-                strong #{settings.locale.network} (PH/s)
-              else if settings.nethash_units == 'H'
-                strong #{settings.locale.network} (H/s)
+                strong= t('translate.network') + t(['translate.nethash.' + settings.nethash_units, 'translate.nethash.unspecific'])
             .panel-body
               #hashratepanel
                 span.glyphicon.fa.fa-gears
@@ -164,7 +164,7 @@ html
         .col-md-2
           .panel.panel-default.hidden-sm.hidden-xs
             .panel-heading
-              strong #{settings.locale.difficulty}
+              strong= t('translate.difficulty')
             .panel-body
               #difficultypanel
                 span.glyphicon.fa.fa-sliders
@@ -177,7 +177,7 @@ html
         .col-md-2
          .panel.panel-default.hidden-sm.hidden-xs
             .panel-heading
-              strong #{settings.locale.masternodecount}
+              strong= t('translate.masternode',{count: 0 })
             .panel-body
               #masternodepanel
                 span.glyphicon.fa.fa-exclamation-triangle
@@ -188,7 +188,7 @@ html
         .col-md-2
           .panel.panel-default.hidden-sm.hidden-xs
             .panel-heading
-              strong #{settings.locale.ex_supply} (#{settings.symbol})
+              strong= t('translate.coin_supply',{coin : settings.symbol})
             .panel-body
               #supplypanel
                 span.glyphicon.fa.fa-pie-chart
@@ -201,7 +201,7 @@ html
         .col-md-2
           .panel.panel-default.hidden-sm.hidden-xs
             .panel-heading
-              strong #{settings.markets.exchange} Price
+              strong= t('translate.coin_price',{exchange : settings.markets.exchange})
             .panel-body
               #pricepanel
                 span.glyphicon.fa.fa-rocket
@@ -215,8 +215,8 @@ html
       .row.text-center(style='margin-top:10px;margin-bottom:20px;')
         form.form-inline(method='post', action='/search')
           #index-search.form-group
-            input.form-control(type='text', name='search', placeholder='#{settings.locale.ex_search_message}', style='min-width:80%;margin-right:5px;')
-            button.btn.btn-success(type='submit') #{settings.locale.ex_search_button}
+            input.form-control(type='text', name='search', placeholder=t('translate.search.hint'), style='min-width:80%;margin-right:5px;')
+            button.btn.btn-success(type='submit')=t('translate.search.button')
     block content
     .navbar.navbar-default.navbar-fixed-bottom.hidden-xs
       .col-md-4
@@ -264,7 +264,7 @@ html
         ul.nav
           li.text-center(style='margin-left:80px;margin-right:80px;')
             p(style='margin-top:15px;')
-              a.navbar-link(href='https://github.com/ipsum-network/ips-explorer', target='_blank') IPSUM Network
+              a.navbar-link(href='https://github.com/ipsum-network/ips-explorer', target='_blank')= t("translate.ips_network")
       span.connections
         label#lblBlockcount.label.label-default -
         label#lblConnections.label.label-default -

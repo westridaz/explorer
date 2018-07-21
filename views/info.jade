@@ -1,142 +1,245 @@
 extends layout
 
 block content
-  .col-md-12.col-xs-12
+  .col-xs-12.col-md-10.col-md-offset-1
     .panel.panel-default
       .panel-heading
-        strong #{settings.locale.api_title}
+        strong= t("translate.api_title")
       .panel-body
         img(src='#{settings.logo}', style='margin:0;height:128px;')
-        :markdown
-          *#{settings.locale.api_message}*
+        p
+          em= t("translate.api_info")
+        hr
+
+        h3= t("translate.api_calls")
+        p
+          em= t("translate.api_calls_info",{coin : settings.symbol })
+        ul
+
+          li
+            p
+              strong= t("translate.api_getdifficulty")
+              br
+              em= t("translate.api_getdifficulty_info")
+              br
+              a(href='/api/getdifficulty') #{address}/api/getdifficulty
+
+          li
+            p
+              strong= t("translate.api_getconnectioncount")
+              br
+              em= t("translate.api_getconnectioncount_info")
+              br
+              a(href='/api/getconnectioncount') #{address}/api/getconnectioncount
           
-          ------
-
-          ### #{settings.locale.api_calls}
-          *Return data from chaincoind*
-
-          *  **getdifficulty**  
-             *#{settings.locale.api_getdifficulty}*  
-             [#{address}/api/getdifficulty](/api/getdifficulty)   
-
-          *  **getconnectioncount**  
-             *#{settings.locale.api_getconnectioncount}*  
-             [#{address}/api/getconnectioncount](/api/getconnectioncount) 
-
-          *  **getmasternodecount**  
-             *#{settings.locale.api_getmasternodecount}*  
-             [#{address}/api/getmasternodecount](/api/getmasternodecount)              
-
-          *  **getblockcount**  
-             *#{settings.locale.api_getblockcount}*  
-             [#{address}/api/getblockcount](/api/getblockcount)
-
-          *  **getblockhash [index]**  
-             *#{settings.locale.api_getblockhash}*  
-             [#{address}/api/getblockhash?index=#{hashes.blockindex}](/api/getblockhash?index=#{hashes.blockindex})
-
-          *  **getblock [hash]**  
-             *#{settings.locale.api_getblock}*  
-             [#{address}/api/getblock?hash=#{hashes.blockhash}](/api/getblock?hash=#{hashes.blockhash})
-
-          *  **getrawtransaction [txid] [decrypt]**  
-             *#{settings.locale.api_getrawtransaction}*  
-             [#{address}/api/getrawtransaction?txid=#{hashes.txhash}&decrypt=0](/api/getrawtransaction?txid=#{hashes.txhash}&decrypt=0)  
-             [#{address}/api/getrawtransaction?txid=#{hashes.txhash}&decrypt=1](/api/getrawtransaction?txid=#{hashes.txhash}&decrypt=1)
+          li
+            p
+              strong= t("translate.api_getmasternodecount")
+              br
+              em= t("translate.api_getmasternodecount_info")
+              br
+              a(href='/api/getmasternodecount') #{address}/api/getmasternodecount
+          
+          li
+            p
+              strong= t("translate.api_getblockcount")
+              br
+              em= t("translate.api_getblockcount_info")
+              br
+              a(href='/api/getblockcount') #{address}/api/getblockcount
+          
+          li
+            p
+              strong= t("translate.api_getblockhash")
+              br
+              em= t("translate.api_getblockhash_info")
+              br
+              a(href='/api/getblockhash?index=#{hashes.blockindex}') #{address}/api/getblockhash?index=#{hashes.blockindex}  
+       
+          li
+            p
+              strong= t("translate.api_getblock")
+              br
+              em= t("translate.api_getblock_info")
+              br
+              a(href='/api/getblock?hash=#{hashes.blockhash}') #{address}/api/getblock?hash=#{hashes.blockhash}  
         
+          li
+            p
+              strong= t("translate.api_getrawtransaction")
+              br
+              em= t("translate.api_getrawtransaction_info")
+              br
+              a(href='/api/getrawtransaction?txid=#{hashes.txhash}&decrypt=0') #{address}/api/getrawtransaction?txid=#{hashes.txhash}&decrypt=0  
+              br
+              a(href='/api/getrawtransaction?txid=#{hashes.txhash}&decrypt=1') #{address}/api/getrawtransaction?txid=#{hashes.txhash}&decrypt=1  
 
-        if settings.index.show_hashrate == true
-          :markdown
-            *  **getnetworkhashps**  
-               *#{settings.locale.api_getnetworkhashps}*  
-               [#{address}/api/getnetworkhashps](/api/getnetworkhashps)
+          if settings.index.show_hashrate == true
+          li
+            p
+              strong= t("translate.api_getnetworkhashps")
+              br
+              em= t("translate.api_getnetworkhashps_info")
+              br
+              a(href='/api/getnetworkhashps') #{address}/api/getnetworkhashps  
 
 
-
-        if settings.heavy == true
-          :markdown
-            *  **getmaxmoney**  
-               *#{settings.locale.api_getmaxmoney}*  
-               [#{address}/api/getmaxmoney](/api/getmaxmoney)
+          if settings.heavy == true
+            li
+              p
+                strong= t("translate.api_getmaxmoney")
+                br
+                em= t("translate.api_getmaxmoney_info")
+                br
+                a(href='/api/getmaxmoney') #{address}/api/getmaxmoney
             
-            *  **getmaxvote**  
-               *#{settings.locale.api_getmaxvote}*  
-               [#{address}/api/getmaxvote](/api/getmaxvote)
+            li
+              p
+                strong= t("translate.api_getmaxvote")
+                br
+                em= t("translate.api_getmaxvote_info")
+                br
+                a(href='/api/getmaxvote') #{address}/api/getmaxvote
+            
+            li
+              p
+                strong= t("translate.api_getvote")
+                br
+                em= t("translate.api_getvote_info")
+                br
+                a(href='/api/getvote') #{address}/api/getvote
+            
+            li
+              p
+                strong= t("translate.api_getphase")
+                br
+                em= t("translate.api_getphase_info")
+                br
+                a(href='/api/getphase') #{address}/api/getphase
+            
+            li
+              p
+                strong= t("translate.api_getreward")
+                br
+                em= t("translate.api_getreward_info")
+                br
+                a(href='/api/getreward') #{address}/api/getreward
+            
+            li
+              p
+                strong= t("translate.api_getsupply")
+                br
+                em= t("translate.api_getsupply_info")
+                br
+                a(href='/api/getsupply') #{address}/api/getsupply
+            
+            li
+              p
+                strong= t("translate.api_getnextrewardestimate")
+                br
+                em= t("translate.api_getnextrewardestimate_info")
+                br
+                a(href='/api/getnextrewardestimate') #{address}/api/getnextrewardestimate
 
-            *  **getvote**  
-               *#{settings.locale.api_getvote}*  
-               [#{address}/api/getvote](/api/getvote)
+            li
+              p
+                strong= t("translate.api_getnextrewardwhenstr")
+                br
+                em= t("translate.api_getnextrewardwhenstr_info")
+                br
+                a(href='/api/getnextrewardwhenstr') #{address}/api/getnextrewardwhenstr
+        hr                                         
+        h3= t("translate.api_calls_ext")
+        p
+          em= t("translate.api_calls_ext_info")
+        ul
+            li
+              p
+                strong= t("translate.api_getmoneysupply")
+                br
+                em= t("translate.api_getmoneysupply_info")
+                br
+                a(href='/ext/getmoneysupply') #{address}/ext/getmoneysupply
 
-            *  **getphase**  
-               *#{settings.locale.api_getphase}*  
-               [#{address}/api/getphase](/api/getphase)
+            li
+              p
+                strong= t("translate.api_getdistribution")
+                br
+                em= t("translate.api_getdistribution_info")
+                br
+                a(href='/ext/getdistribution') #{address}/ext/getdistribution
 
-            *  **getreward**  
-               *#{settings.locale.api_getreward}*  
-               [#{address}/api/getreward](/api/getreward)
-
-            *  **getsupply**  
-               *#{settings.locale.api_getsupply}*  
-               [#{address}/api/getsupply](/api/getsupply)  
-
-            *  **getnextrewardestimate**  
-               *#{settings.locale.api_getnextrewardestimate}*  
-               [#{address}/api/getnextrewardestimate](/api/getnextrewardestimate)
-
-            *  **getnextrewardwhenstr**  
-               *#{settings.locale.api_getnextrewardwhenstr}*  
-               [#{address}/api/getnextrewardwhenstr](/api/getnextrewardwhenstr)                                                       
-
-        :markdown
-          ------
-
-          ### Extended API 
-          *Return data from local indexes*
-
-          *  **getmoneysupply**  
-               *Returns current money supply*  
-               [#{address}/ext/getmoneysupply](/ext/getmoneysupply)
-
-          *  **getdistribution**  
-               *Returns wealth distribution stats*  
-               [#{address}/ext/getdistribution](/ext/getdistribution)               
-
-          *  **getaddress (/ext/getaddress/hash)**  
-               *Returns information for given address*  
-               [#{address}/ext/getaddress/#{hashes.address}](/ext/getaddress/#{hashes.address})
-
-          *  **getbalance (/ext/getbalance/hash)**  
-               *Returns current balance of given address*  
-               [#{address}/ext/getbalance/#{hashes.address}](/ext/getbalance/#{hashes.address})
-
-          *  **getlasttxs (/ext/getlasttxs/count/min)**  
-               *Returns last [count] transactions greater than [min]*  
-               *Note: returned values are in satoshis*  
-               [#{address}/ext/getlasttxs/10/100](/ext/getlasttxs/10/100)
-
-        if settings.display.masternodes == true
-          :markdown
-            *  **getmasternodes**  
-               *#{settings.locale.api_getmasternodelist}*  
-               [#{address}/ext/getmasternodes](/ext/getmasternodes)
+            li
+              p
+                strong= t("translate.api_getaddress")
+                br
+                em= t("translate.api_getaddress_info")
+                br
+                a(href='/ext/getaddress/#{hashes.address}') #{address}/ext/getaddress/#{hashes.address}
+            
+            li
+              p
+                strong= t("translate.api_getbalance")
+                br
+                em= t("translate.api_getbalance_info")
+                br
+                a(href='/ext/getbalance/#{hashes.address}') #{address}/ext/getbalance/#{hashes.address}
+            
+            li
+              p
+                strong= t("translate.api_getlasttxs")
+                br
+                em= t("translate.api_getlasttxs_info")
+                br
+                em= t("translate.api_getlasttxs_return_satoshi")
+                br
+                a(href='/ext/getlasttxs/#{hashes.address}') #{address}/ext/getlasttxs/#{hashes.address}
           
-        :markdown
-          ------
+            if settings.display.masternodes == true
+             li
+              p
+                strong= t("translate.api_getmasternodelist")
+                br
+                em= t("translate.api_getmasternodelist_info")
+                br
+                a(href='/ext/getmasternodes') #{address}/ext/getmasternodes
 
-          ### Linking (GET)
-          *Linking to the block explorer*
+        hr                                         
+        h3= t("translate.api_calls_get")
+        p
+          em= t("translate.api_calls_get_info")
+        ul   
+          li
+              p
+                strong= t("translate.apt_get_transaction")
+                br
+                em= t("translate.apt_get_transaction_info")
+                br
+                a(href='/tx/#{hashes.txhash}') #{address}/tx/#{hashes.txhash}
+          
+          li
+              p
+                strong= t("translate.apt_get_block")
+                br
+                em= t("translate.apt_get_block_info")
+                br
+                a(href='/block/#{hashes.blockhash}') #{address}/block/#{hashes.blockhash}
 
-          *  **transaction (/tx/txid)**  
-             [#{address}/tx/#{hashes.txhash}](/tx/#{hashes.txhash})
+          li
+              p
+                strong= t("translate.apt_get_address")
+                br
+                em= t("translate.apt_get_address_info")
+                br
+                a(href='/address/#{hashes.address}') #{address}/address/#{hashes.address}
 
-          *  **block (/block/hash)**  
-             [#{address}/block/#{hashes.blockhash}](/block/#{hashes.blockhash})
-    
-          *  **address (/address/hash)**  
-             [#{address}/address/#{hashes.address}](/address/#{hashes.address})
-
-          *  **qrcode (/qr/hash)**  
-             [#{address}/qr/#{hashes.address}](/qr/#{hashes.address})
+          li
+              p
+                strong= t("translate.apt_get_qrcode")
+                br
+                em= t("translate.apt_get_qrcode_info")
+                br
+                a(href='/qr/#{hashes.address}') #{address}/qr/#{hashes.address}
 
         p&nbsp;
         a(href="https://www.ubuntu.com/", target='_blank')

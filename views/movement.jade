@@ -65,9 +65,15 @@ block content
         rtable.api().ajax.reload(null, false);
       }, 45000 );
     });
-  .col-xs-12.col-md-10.col-md-offset-1(style="margin-bottom: 5%")
-    table#alerts-table.table.table-striped.table-bordered
-      thead
-        th timestamp
-        th.hidden-xs txid
-        th amount
+  .col-xs-12.col-md-10.col-md-offset-1
+      .panel.panel-default
+        .panel-heading
+          strong= t('translate.latest_movement')
+        table#alerts-table.table.table-bordered.table-striped
+          thead
+            tr
+              th.text-center= t('translate.timestamp')
+              th.hidden-xs.text-center= t('translate.txid')
+              th.text-center= t('translate.amount_coin',{coin : settings.symbol})
+          tbody.text-center
+    .footer-padding

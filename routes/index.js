@@ -1,7 +1,6 @@
 var express = require('express')
   , router = express.Router()
   , settings = require('../lib/settings')
-  , locale = require('../lib/locale')
   , db = require('../lib/database')
   , lib = require('../lib/explorer')
   , qr = require('qr-image');
@@ -250,7 +249,7 @@ router.post('/search', function(req, res) {
             if (block != 'There was an error. Check your console.') {
               res.redirect('/block/' + query);
             } else {
-              route_get_index(res, locale.ex_search_error + query );
+              route_get_index(res, t('translate.search.no_results',{query:query}));
             }
           });
         }
@@ -265,7 +264,7 @@ router.post('/search', function(req, res) {
           if (hash != 'There was an error. Check your console.') {
             res.redirect('/block/' + hash);
           } else {
-            route_get_index(res, locale.ex_search_error + query );
+            route_get_index(res, t('translate.search.no_results',{query:query}));
           }
         });
       }

@@ -32,17 +32,17 @@ block content
         ]
       });
     });
-  .col-md-12(style="margin-bottom: 4%")
+  .col-xs-12.col-md-10.col-md-offset-1
     .row.text-center(style='margin-bottom:15px;')
-      i #{settings.locale.net_warning}
+      i= t('translate.network_info')
     .panel.panel-default
       .panel-heading
-        strong #{settings.locale.net_connections}
+        strong= t('translate.latest_network')
       table#connections-table.table.table-bordered.table-striped
         thead
           tr
-            th.text-center #{settings.locale.net_address}
-            th.text-center #{settings.locale.net_protocol}
-            th.text-center #{settings.locale.net_subversion}
-            th.text-center #{settings.locale.net_country}
+            th.text-center= t('translate.address')
+            th.text-center= t('translate.protocol')
+            th.text-center= t('translate.sub_version')
+            th.text-center= t('translate.country')
         tbody.text-center
