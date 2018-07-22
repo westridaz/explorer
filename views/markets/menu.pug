@@ -33,8 +33,8 @@ block content
             each mkt in settings.markets.enabled
               if market == mkt
                 li.active
-                  a.navbar-link.loading(href='/markets/#{mkt}')=t('exchange.'+mkt)
+                  a.navbar-link.loading(href='/markets/' + mkt)=t('exchange.'+mkt)
               else
                 li
-                  a.navbar-link.loading(href='/markets/#{mkt}')=t('exchange.'+mkt)
+                  a.navbar-link.loading(href='/markets/' + mkt)=t('exchange.'+mkt)
     block market_view

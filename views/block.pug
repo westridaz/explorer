@@ -9,15 +9,15 @@ block content
       .panel-heading(style='padding-left:25px;padding-right:25px;')       
         .row           
           if block.previousblockhash != null
-            a(href='/block/#{block.previousblockhash}')
+            a(href='/block/' + block.previousblockhash)
               span.glyphicon.glyphicon-chevron-left.iquidus.block-last(data-toggle='tooltip', data-placement='top', title= t('translate.block_previous'))  
             strong.hidden-xs= t('translate.coin_block_hash',{coin : settings.symbol,hash : block.hash})
           else
             strong.hidden-xs(style='margin-left:10px;')= t('translate.coin_block_hash',{coin : settings.symbol,hash : block.hash})
           if block.nextblockhash != null 
-            a(href='/block/#{block.nextblockhash}')
+            a(href='/block/' + block.nextblockhash)
               span.glyphicon.glyphicon-chevron-right.iquidus.pull-right.block-next(data-toggle='tooltip', data-placement='top', title= t('translate.block_next'))       
-          a(href='/api/getblock?hash=#{block.hash}')
+          a(href='/api/getblock?hash=' + block.hash)
             span.glyphicon.glyphicon-info-sign.iquidus.pull-right(data-toggle='tooltip', data-placement='top', title= t('translate.tooltip_raw_block_transaction')) 
       table.table.table-bordered.summary-table 
         thead
@@ -30,7 +30,7 @@ block content
             th.hidden-xs= t('translate.size_kb')
             th.hidden-xs= t('translate.bits')
             th.hidden-xs= t('translate.nonce')
-            th.hidden-xs= t('translate.vote')     
+            th.hidden-xs= t('translate.timestamp')     
         tbody
           if block.confirmations >= confirmations                
             tr.success
@@ -88,7 +88,7 @@ block content
             each txn in txs
               tr
                 td.hidden-xs
-                  a(href='/tx/#{txn.txid}') #{txn.txid}
+                  a(href='/tx/' + txn.txid) #{txn.txid}
                 td #{txn.vout.length}
                 if txn.vout.length > 0
                   - var total = txn.total / 100000000
@@ -96,6 +96,6 @@ block content
                 else
                   td #{txn.total.toFixed(8)}
                 td.view_tx 
-                  a(href='/tx/#{txn.txid}')
+                  a(href='/tx/' + txn.txid)
                     span.glyphicon.glyphicon-eye-open(data-toggle='tooltip', data-placement='top', title= t('translate.tooltip_get_tx'))  
     .footer-padding  

@@ -1,6 +1,6 @@
 .panel.panel-default
   .panel-heading
-    h3.panel-title= t('translate.current_balance')
+    h3.panel-title= t('translate.balance_top',{top : 100})
   table.table.table-hover.table-bordered(cellspacing="0")
     thead
       tr
@@ -19,8 +19,8 @@
           td(style='text-align:center;') 
             =count
           td 
-            a(href='/address/#{item.a_id}') #{item.a_id}
-            include ./rl_labels.jade
+            a(href='/address/' + item.a_id) #{item.a_id}
+            include ./rl_labels.pug
           td.hidden-xs
             =itemFixed.toFixed(8)
           td.hidden-xs(style='text-align:center;') 
