@@ -60,6 +60,7 @@
     "balance_coin" : "Balance {{coin, uppercase}}",
     "received_coin" : "Received {{coin, uppercase}}",
     "received_top" : "Top {{top}} Received",
+    "balance_top" : "Top {{top}} Balance",
     "wealth_distribution" :"Wealth Distribution",
     "top" : "Top {{top}}",
     "total" : "Total",
