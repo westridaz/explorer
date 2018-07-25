@@ -88,6 +88,14 @@ app.use(function (req, res, next) {
   next();
 })
 
+// Language Files for Datatable
+app.use('/datatable/lang', function(req,res){
+    i18next.changeLanguage(req.language, (err, t) => {
+      if (err) return console.log('something went wrong loading', err);
+      res.send(i18next.t("datatable", { returnObjects: true }));
+    });   
+});
+
 
 // routes
 app.use('/api', chaincoinapi.app);
