@@ -10,27 +10,27 @@ block content
         .row           
           if block.previousblockhash != null
             a(href='/block/' + block.previousblockhash)
-              span.glyphicon.glyphicon-chevron-left.iquidus.block-last(data-toggle='tooltip', data-placement='top', title= t('translate.block_previous'))  
-            strong.hidden-xs= t('translate.coin_block_hash',{coin : settings.symbol,hash : block.hash})
+              span.glyphicon.glyphicon-chevron-left.iquidus.block-last(data-toggle='tooltip', data-placement='top', title= t('block.block_previous'))  
+            strong.hidden-xs= t('block.coin_block_hash',{coin : settings.symbol,hash : block.hash})
           else
-            strong.hidden-xs(style='margin-left:10px;')= t('translate.coin_block_hash',{coin : settings.symbol,hash : block.hash})
+            strong.hidden-xs(style='margin-left:10px;')= t('block.coin_block_hash',{coin : settings.symbol,hash : block.hash})
           if block.nextblockhash != null 
             a(href='/block/' + block.nextblockhash)
-              span.glyphicon.glyphicon-chevron-right.iquidus.pull-right.block-next(data-toggle='tooltip', data-placement='top', title= t('translate.block_next'))       
+              span.glyphicon.glyphicon-chevron-right.iquidus.pull-right.block-next(data-toggle='tooltip', data-placement='top', title= t('block.block_next'))       
           a(href='/api/getblock?hash=' + block.hash)
-            span.glyphicon.glyphicon-info-sign.iquidus.pull-right(data-toggle='tooltip', data-placement='top', title= t('translate.tooltip_raw_block_transaction')) 
+            span.glyphicon.glyphicon-info-sign.iquidus.pull-right(data-toggle='tooltip', data-placement='top', title= t('block.tooltip_raw_block_transaction')) 
       table.table.table-bordered.summary-table 
         thead
           tr
-            th= t('translate.height')
-            th= t('translate.difficulty')
-            th= t('translate.confirmations')
+            th= t('block.height')
+            th= t('block.difficulty')
+            th= t('block.confirmations')
             if settings.heavy == true
-              th= t('translate.vote')
-            th.hidden-xs= t('translate.size_kb')
-            th.hidden-xs= t('translate.bits')
-            th.hidden-xs= t('translate.nonce')
-            th.hidden-xs= t('translate.timestamp')     
+              th= t('block.vote')
+            th.hidden-xs= t('block.size_kb')
+            th.hidden-xs= t('block.bits')
+            th.hidden-xs= t('block.nonce')
+            th.hidden-xs= t('block.timestamp')     
         tbody
           if block.confirmations >= confirmations                
             tr.success
@@ -72,17 +72,17 @@ block content
 
     if block.hash == settings.genesis_block
       .alert.alert-info(role='alert', style='text-align:center;')   
-        strong= t('translate.block_genesis')
+        strong= t('block.block_genesis')
     else
       .panel.panel-default
         .panel-heading
-          strong= t('translate.latest_transactions')
+          strong= t('block.latest_transactions')
         table.table.table-bordered.table-striped.summary-table 
           thead
             tr
-              th.hidden-xs= t('translate.hash')
-              th= t('translate.recipients_address')
-              th= t('translate.amount_coin',{coin : settings.symbol})
+              th.hidden-xs= t('block.hash')
+              th= t('block.recipients_address')
+              th= t('block.amount_coin',{coin : settings.symbol})
               th
           tbody
             each txn in txs
@@ -97,5 +97,5 @@ block content
                   td #{txn.total.toFixed(8)}
                 td.view_tx 
                   a(href='/tx/' + txn.txid)
-                    span.glyphicon.glyphicon-eye-open(data-toggle='tooltip', data-placement='top', title= t('translate.tooltip_get_tx'))  
+                    span.glyphicon.glyphicon-eye-open(data-toggle='tooltip', data-placement='top', title= t('block.tooltip_get_tx'))  
     .footer-padding  

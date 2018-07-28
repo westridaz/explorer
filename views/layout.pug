@@ -89,7 +89,7 @@ html
       .container-fluid
         .navbar-header
           button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar-collapse')
-            span.sr-only= t('translate.toggle')
+            span.sr-only= t('layout.navigation.toggle')
             span.icon-bar
             span.icon-bar
             span.icon-bar
@@ -99,42 +99,42 @@ html
             li#home
               a.navbar-link(href='/')
                 span.glyphicon.glyphicon-search
-                span.menu-text= t('translate.explorer')
+                span.menu-text= t('layout.navigation.explorer')
             if settings.heavy == true
               li#reward
                 a.navbar-link(href='/reward')
                   span.fa.fa-star
-                  span.menu-text= t('translate.reward')
+                  span.menu-text= t('layout.navigation.reward')
             if settings.display.movement == true
               li#movement
                 a.navbar-link.loading(href='/movement')
                   span.fa.fa-money
-                  span.menu-text= t('translate.movement')
+                  span.menu-text= t('layout.navigation.movement')
             if settings.display.masternodes == true
               li#masternodes
                 a.navbar-link(href='/masternodes')
                   span.fa.fa-share-alt
-                  span.menu-text= t('translate.masternodes')
+                  span.menu-text= t('layout.navigation.masternodes')
             if settings.display.network == true
               li#network
                 a.navbar-link(href='/network')
                   span.fa.fa-share-alt
-                  span.menu-text= t('translate.network')
+                  span.menu-text= t('layout.navigation.network')
             if settings.display.richlist == true
               li#richlist
                 a.navbar-link(href='/richlist')
                   span.fa.fa-btc
-                  span.menu-text= t('translate.richlist')
+                  span.menu-text= t('layout.navigation.richlist')
             if settings.display.markets == true
               li#markets
                 a.navbar-link.loading(href='/markets/' + settings.markets.default)
                   span.fa.fa-line-chart
-                  span.menu-text= t('translate.markets')
+                  span.menu-text= t('layout.navigation.markets')
             if settings.display.api == true
               li#info
                 a.navbar-link(href='/info')
                   span.glyphicon.glyphicon-info-sign
-                  span.menu-text= t('translate.api')
+                  span.menu-text= t('layout.navigation.api')
 
           ul.nav.navbar-nav.navbar-right
               li.dropdown
@@ -151,7 +151,7 @@ html
         .col-md-2.col-md-offset-1
           .panel.panel-default.hidden-sm.hidden-xs
             .panel-heading
-                strong= t('translate.network') + t(['translate.nethash.' + settings.nethash_units, 'translate.nethash.unspecific'])
+                strong= t('layout.stats.network') + t(['layout.stats.nethash.' + settings.nethash_units, 'layout.stats.nethash.unspecific'])
             .panel-body
               #hashratepanel
                 span.glyphicon.fa.fa-gears
@@ -164,7 +164,7 @@ html
         .col-md-2
           .panel.panel-default.hidden-sm.hidden-xs
             .panel-heading
-              strong= t('translate.difficulty')
+              strong= t('layout.stats.difficulty')
             .panel-body
               #difficultypanel
                 span.glyphicon.fa.fa-sliders
@@ -177,7 +177,7 @@ html
         .col-md-2
          .panel.panel-default.hidden-sm.hidden-xs
             .panel-heading
-              strong= t('translate.masternode',{count: 0 })
+              strong= t('layout.stats.masternode',{count: 0 })
             .panel-body
               #masternodepanel
                 span.glyphicon.fa.fa-exclamation-triangle
@@ -188,7 +188,7 @@ html
         .col-md-2
           .panel.panel-default.hidden-sm.hidden-xs
             .panel-heading
-              strong= t('translate.coin_supply',{coin : settings.symbol})
+              strong= t('layout.stats.coin_supply',{coin : settings.symbol})
             .panel-body
               #supplypanel
                 span.glyphicon.fa.fa-pie-chart
@@ -201,7 +201,7 @@ html
         .col-md-2
           .panel.panel-default.hidden-sm.hidden-xs
             .panel-heading
-              strong= t('translate.coin_price',{exchange : settings.markets.exchange})
+              strong= t('layout.stats.coin_price',{exchange : settings.markets.exchange})
             .panel-body
               #pricepanel
                 span.glyphicon.fa.fa-rocket
@@ -215,8 +215,8 @@ html
       .row.text-center(style='margin-top:10px;margin-bottom:20px;')
         form.form-inline(method='post', action='/search')
           #index-search.form-group
-            input.form-control(type='text', name='search', placeholder=t('translate.search.hint'), style='min-width:80%;margin-right:5px;')
-            button.btn.btn-success(type='submit')=t('translate.search.button')
+            input.form-control(type='text', name='search', placeholder=t('layout.search.hint'), style='min-width:80%;margin-right:5px;')
+            button.btn.btn-success(type='submit')=t('layout.search.button')
     block content
     .navbar.navbar-default.navbar-fixed-bottom.hidden-xs
       .col-md-4
@@ -264,7 +264,7 @@ html
         ul.nav
           li.text-center(style='margin-left:80px;margin-right:80px;')
             p(style='margin-top:15px;')
-              a.navbar-link(href='https://github.com/ipsum-network/ips-explorer', target='_blank')= t("translate.ips_network")
+              a.navbar-link(href='https://github.com/ipsum-network/ips-explorer', target='_blank')= t("layout.footer.ips_network")
       span.connections
         label#lblBlockcount.label.label-default -
         label#lblConnections.label.label-default -

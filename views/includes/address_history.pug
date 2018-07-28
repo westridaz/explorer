@@ -1,8 +1,8 @@
 thead
   tr
-    th.hidden-xs= t('translate.timestamp')
-    th.hidden-xs= t('translate.hash')
-    th= t('translate.amount_coin',{coin : settings.symbol})
+    th.hidden-xs= t('address.timestamp')
+    th.hidden-xs= t('address.hash')
+    th= t('address.amount_coin',{coin : settings.symbol})
 tbody
   each tx in txs
     - var time = format_unixtime(tx.timestamp)

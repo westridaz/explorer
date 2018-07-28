@@ -69,12 +69,12 @@ block content
   .col-xs-12.col-md-10.col-md-offset-1
       .panel.panel-default
         .panel-heading
-          strong= t('translate.latest_movement')
+          strong= t('movement.latest')
         table#alerts-table.table.table-bordered.table-striped
           thead
             tr
-              th.text-center= t('translate.timestamp')
-              th.hidden-xs.text-center= t('translate.txid')
-              th.text-center= t('translate.amount_coin',{coin : settings.symbol})
+              th.text-center= t('movement.timestamp')
+              th.hidden-xs.text-center= t('movement.txid')
+              th.text-center= t('movement.amount_coin',{coin : settings.symbol})
           tbody.text-center
   .footer-padding

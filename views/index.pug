@@ -41,24 +41,24 @@ block content
       if error !== null        
         .alert.alert-danger.alert-dismissable(role='alert')
           button.close(type='button', data-dismiss='alert') ×
-          strong= t('translate.error',{error : error})
+          strong= t('explorer.error',{error : error})
       if warning !== null        
         .alert.alert-warning.alert-dismissable(role='alert')
           button.close(type='button', data-dismiss='alert') ×
-          strong= t('translate.warning',{error : error})
+          strong= t('explorer.warning',{error : error})
   
   .col-xs-12.col-md-10.col-md-offset-1
     .panel.panel-default
       .panel-heading
-        strong= t('translate.latest_transactions')
+        strong= t('explorer.latest_transactions')
       table#recent-table.table.table-bordered.table-striped
         thead
           tr
-            th.text-center= t('translate.block')
-            th.hidden-xs.text-center= t('translate.hash')
-            th.hidden-xs.text-centerr= t('translate.recipients')
-            th.text-center= t('translate.coin_supply',{coin : settings.symbol})
-            th.text-center= t('translate.timestamp')
+            th.text-center= t('explorer.block')
+            th.hidden-xs.text-center= t('explorer.hash')
+            th.hidden-xs.text-centerr= t('explorer.recipients')
+            th.text-center= t('explorer.coin_supply',{coin : settings.symbol})
+            th.text-center= t('explorer.timestamp')
         tbody.text-center
     .footer-padding
       

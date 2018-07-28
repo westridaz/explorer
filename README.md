@@ -113,6 +113,8 @@ Index are not working correct you need to create the index in the mongodb
 
     db.addresses.ensureIndex({"a_id":1})
     db.getCollection('txes').ensureIndex({"txid":1})
+    db.getCollection('txes').ensureIndex({"timestamp":1})
+    db.txes.collection.createIndex( { timestamp: -1 } )
     db.txes.ensureIndex({"total":1})
 
 **script is already running.**

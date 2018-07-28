@@ -5,18 +5,18 @@ block market_view
     .col-md-12  
       .panel.panel-default
         .panel-heading
-          strong= t('translate.market_title',{market : t('exchange.graviex'),coin :  marketdata.coin, exchange : marketdata.exchange }) 
+          strong= t('market.market_title',{market : t('exchange.graviex'),coin :  marketdata.coin, exchange : marketdata.exchange }) 
           a(href='#')
-            span.fa.fa-line-chart.pull-right.view-chart-disabled.iquidus.market-toggle(data-toggle='tooltip', data-placement='bottom', title= t('translate.no_chart')) 
+            span.fa.fa-line-chart.pull-right.view-chart-disabled.iquidus.market-toggle(data-toggle='tooltip', data-placement='bottom', title= t('market.no_chart')) 
         table.table.table-bordered.summary-table 
           thead
             tr
-              th= t('translate.high')
-              th= t('translate.low')
-              th= t('translate.volume')
-              th.hidden-xs= t('translate.top_bid')
-              th.hidden-xs= t('translate.top_ask')
-              th.hidden-xs= t('translate.last_price')
+              th= t('market.high')
+              th= t('market.low')
+              th= t('market.volume')
+              th.hidden-xs= t('market.top_bid')
+              th.hidden-xs= t('market.top_ask')
+              th.hidden-xs= t('market.last_price')
           tbody
             tr
               td #{marketdata.data.summary.high}
@@ -29,13 +29,13 @@ block market_view
     .col-md-6.col-xs-12
       .panel.panel-default
         .panel-heading
-          h3.panel-title= t('translate.buy_orders')
+          h3.panel-title= t('market.buy_orders')
         table.table.table-striped.table-bordered.order-table
           thead
             tr
-              th= t('translate.price_coin',{coin : marketdata.exchange })
-              th= t('translate.total_coin',{coin : marketdata.coin })
-              th.hidden-xs= t('translate.amount_coin',{coin : marketdata.exchange})
+              th= t('market.price_coin',{coin : marketdata.exchange })
+              th= t('market.total_coin',{coin : marketdata.coin })
+              th.hidden-xs= t('market.amount_coin',{coin : marketdata.exchange})
           tbody
             each buy in marketdata.data.buys
               tr
@@ -48,13 +48,13 @@ block market_view
     .col-md-6.col-xs-12
       .panel.panel-default
         .panel-heading
-          h3.panel-title= t('translate.sell_orders')
+          h3.panel-title= t('market.sell_orders')
         table.table.table-striped.table-bordered.order-table
           thead
             tr
-              th= t('translate.price_coin',{coin : marketdata.exchange })
-              th= t('translate.total_coin',{coin : marketdata.coin })
-              th.hidden-xs= t('translate.amount_coin',{coin : marketdata.exchange})
+              th= t('market.price_coin',{coin : marketdata.exchange })
+              th= t('market.total_coin',{coin : marketdata.coin })
+              th.hidden-xs= t('market.amount_coin',{coin : marketdata.exchange})
           tbody
             each sell in marketdata.data.sells
               tr
@@ -68,23 +68,23 @@ block market_view
     .col-md-12
       .panel.panel-default
         .panel-heading
-          h3.panel-title= t('translate.trade_history')
+          h3.panel-title= t('market.trade_history')
         table.table.table-hover.history-table.table-bordered(cellspacing="0")
           thead
             tr
-              th.hidden-xs= t('translate.order_type')
-              th= t('translate.price_coin',{coin : marketdata.exchange })
-              th= t('translate.total_coin',{coin : marketdata.coin })
-              th= t('translate.amount_coin',{coin : marketdata.exchange})
-              th= t('translate.timestamp')
+              th.hidden-xs= t('market.order_type')
+              th= t('market.price_coin',{coin : marketdata.exchange })
+              th= t('market.total_coin',{coin : marketdata.coin })
+              th= t('market.amount_coin',{coin : marketdata.exchange})
+              th= t('market.timestamp')
           tbody
             each order in marketdata.data.history
                 tr
                   td.hidden-xs
                     if(order.ordertype)
-                      =t('translate.order.' + order.ordertype.toLowerCase())
+                      =t('market.order.' + order.ordertype.toLowerCase())
                     else 
-                      = t('translate.order_unknown')
+                      = t('market.order_unknown')
                   td
                     =order.amount
                   td

@@ -4,71 +4,71 @@ block content
   .col-xs-12.col-md-10.col-md-offset-1
     .panel.panel-default
       .panel-heading
-        strong= t("translate.api_title")
+        strong= t("api.api_title")
       .panel-body
         img(src=settings.logo, style='margin:0;height:128px;')
         p
-          em= t("translate.api_info")
+          em= t("api.api_info")
         hr
 
-        h3= t("translate.api_calls")
+        h3= t("api.api_calls")
         p
-          em= t("translate.api_calls_info",{coin : settings.symbol })
+          em= t("api.api_calls_info",{coin : settings.symbol })
         ul
 
           li
             p
-              strong= t("translate.api_getdifficulty")
+              strong= t("api.api_getdifficulty")
               br
-              em= t("translate.api_getdifficulty_info")
+              em= t("api.api_getdifficulty_info")
               br
               a(href='/api/getdifficulty') #{address}/api/getdifficulty
 
           li
             p
-              strong= t("translate.api_getconnectioncount")
+              strong= t("api.api_getconnectioncount")
               br
-              em= t("translate.api_getconnectioncount_info")
+              em= t("api.api_getconnectioncount_info")
               br
               a(href='/api/getconnectioncount') #{address}/api/getconnectioncount
           
           li
             p
-              strong= t("translate.api_getmasternodecount")
+              strong= t("api.api_getmasternodecount")
               br
-              em= t("translate.api_getmasternodecount_info")
+              em= t("api.api_getmasternodecount_info")
               br
               a(href='/api/getmasternodecount') #{address}/api/getmasternodecount
           
           li
             p
-              strong= t("translate.api_getblockcount")
+              strong= t("api.api_getblockcount")
               br
-              em= t("translate.api_getblockcount_info")
+              em= t("api.api_getblockcount_info")
               br
               a(href='/api/getblockcount') #{address}/api/getblockcount
           
           li
             p
-              strong= t("translate.api_getblockhash")
+              strong= t("api.api_getblockhash")
               br
-              em= t("translate.api_getblockhash_info")
+              em= t("api.api_getblockhash_info")
               br
               a(href='/api/getblockhash?index=' + hashes.blockindex) #{address}/api/getblockhash?index=#{hashes.blockindex}  
        
           li
             p
-              strong= t("translate.api_getblock")
+              strong= t("api.api_getblock")
               br
-              em= t("translate.api_getblock_info")
+              em= t("api.api_getblock_info")
               br
               a(href='/api/getblock?hash=' + hashes.blockhash ) #{address}/api/getblock?hash=#{hashes.blockhash}  
         
           li
             p
-              strong= t("translate.api_getrawtransaction")
+              strong= t("api.api_getrawtransaction")
               br
-              em= t("translate.api_getrawtransaction_info")
+              em= t("api.api_getrawtransaction_info")
               br
               a(href='/api/getrawtransaction?txid=' + hashes.txhash + '&decrypt=0') #{address}/api/getrawtransaction?txid=#{hashes.txhash}&decrypt=0  
               br
@@ -77,9 +77,9 @@ block content
           if settings.index.show_hashrate == true
           li
             p
-              strong= t("translate.api_getnetworkhashps")
+              strong= t("api.api_getnetworkhashps")
               br
-              em= t("translate.api_getnetworkhashps_info")
+              em= t("api.api_getnetworkhashps_info")
               br
               a(href='/api/getnetworkhashps') #{address}/api/getnetworkhashps  
 
@@ -87,157 +87,157 @@ block content
           if settings.heavy == true
             li
               p
-                strong= t("translate.api_getmaxmoney")
+                strong= t("api.api_getmaxmoney")
                 br
-                em= t("translate.api_getmaxmoney_info")
+                em= t("api.api_getmaxmoney_info")
                 br
                 a(href='/api/getmaxmoney') #{address}/api/getmaxmoney
             
             li
               p
-                strong= t("translate.api_getmaxvote")
+                strong= t("api.api_getmaxvote")
                 br
-                em= t("translate.api_getmaxvote_info")
+                em= t("api.api_getmaxvote_info")
                 br
                 a(href='/api/getmaxvote') #{address}/api/getmaxvote
             
             li
               p
-                strong= t("translate.api_getvote")
+                strong= t("api.api_getvote")
                 br
-                em= t("translate.api_getvote_info")
+                em= t("api.api_getvote_info")
                 br
                 a(href='/api/getvote') #{address}/api/getvote
             
             li
               p
-                strong= t("translate.api_getphase")
+                strong= t("api.api_getphase")
                 br
-                em= t("translate.api_getphase_info")
+                em= t("api.api_getphase_info")
                 br
                 a(href='/api/getphase') #{address}/api/getphase
             
             li
               p
-                strong= t("translate.api_getreward")
+                strong= t("api.api_getreward")
                 br
-                em= t("translate.api_getreward_info")
+                em= t("api.api_getreward_info")
                 br
                 a(href='/api/getreward') #{address}/api/getreward
             
             li
               p
-                strong= t("translate.api_getsupply")
+                strong= t("api.api_getsupply")
                 br
-                em= t("translate.api_getsupply_info")
+                em= t("api.api_getsupply_info")
                 br
                 a(href='/api/getsupply') #{address}/api/getsupply
             
             li
               p
-                strong= t("translate.api_getnextrewardestimate")
+                strong= t("api.api_getnextrewardestimate")
                 br
-                em= t("translate.api_getnextrewardestimate_info")
+                em= t("api.api_getnextrewardestimate_info")
                 br
                 a(href='/api/getnextrewardestimate') #{address}/api/getnextrewardestimate
 
             li
               p
-                strong= t("translate.api_getnextrewardwhenstr")
+                strong= t("api.api_getnextrewardwhenstr")
                 br
-                em= t("translate.api_getnextrewardwhenstr_info")
+                em= t("api.api_getnextrewardwhenstr_info")
                 br
                 a(href='/api/getnextrewardwhenstr') #{address}/api/getnextrewardwhenstr
         hr                                         
-        h3= t("translate.api_calls_ext")
+        h3= t("api.api_calls_ext")
         p
-          em= t("translate.api_calls_ext_info")
+          em= t("api.api_calls_ext_info")
         ul
             li
               p
-                strong= t("translate.api_getmoneysupply")
+                strong= t("api.api_getmoneysupply")
                 br
-                em= t("translate.api_getmoneysupply_info")
+                em= t("api.api_getmoneysupply_info")
                 br
                 a(href='/ext/getmoneysupply') #{address}/ext/getmoneysupply
 
             li
               p
-                strong= t("translate.api_getdistribution")
+                strong= t("api.api_getdistribution")
                 br
-                em= t("translate.api_getdistribution_info")
+                em= t("api.api_getdistribution_info")
                 br
                 a(href='/ext/getdistribution') #{address}/ext/getdistribution
 
             li
               p
-                strong= t("translate.api_getaddress")
+                strong= t("api.api_getaddress")
                 br
-                em= t("translate.api_getaddress_info")
+                em= t("api.api_getaddress_info")
                 br
                 a(href='/ext/getaddress/'  + hashes.address) #{address}/ext/getaddress/#{hashes.address}
             
             li
               p
-                strong= t("translate.api_getbalance")
+                strong= t("api.api_getbalance")
                 br
-                em= t("translate.api_getbalance_info")
+                em= t("api.api_getbalance_info")
                 br
                 a(href='/ext/getbalance/' + hashes.address) #{address}/ext/getbalance/#{hashes.address}
             
             li
               p
-                strong= t("translate.api_getlasttxs")
+                strong= t("api.api_getlasttxs")
                 br
-                em= t("translate.api_getlasttxs_info")
+                em= t("api.api_getlasttxs_info")
                 br
-                em= t("translate.api_getlasttxs_return_satoshi")
+                em= t("api.api_getlasttxs_return_satoshi")
                 br
                 a(href='/ext/getlasttxs/10/100') #{address}/ext/getlasttxs/10/100
           
             if settings.display.masternodes == true
              li
               p
-                strong= t("translate.api_getmasternodelist")
+                strong= t("api.api_getmasternodelist")
                 br
-                em= t("translate.api_getmasternodelist_info")
+                em= t("api.api_getmasternodelist_info")
                 br
                 a(href='/ext/getmasternodes') #{address}/ext/getmasternodes
 
         hr                                         
-        h3= t("translate.api_calls_get")
+        h3= t("api.api_calls_get")
         p
-          em= t("translate.api_calls_get_info")
+          em= t("api.api_calls_get_info")
         ul   
           li
               p
-                strong= t("translate.apt_get_transaction")
+                strong= t("api.apt_get_transaction")
                 br
-                em= t("translate.apt_get_transaction_info")
+                em= t("api.apt_get_transaction_info")
                 br
                 a(href='/tx/' + hashes.txhash) #{address}/tx/#{hashes.txhash}
           
           li
               p
-                strong= t("translate.apt_get_block")
+                strong= t("api.apt_get_block")
                 br
-                em= t("translate.apt_get_block_info")
+                em= t("api.apt_get_block_info")
                 br
                 a(href='/block/' + hashes.blockhash) #{address}/block/#{hashes.blockhash}
 
           li
               p
-                strong= t("translate.apt_get_address")
+                strong= t("api.apt_get_address")
                 br
-                em= t("translate.apt_get_address_info")
+                em= t("api.apt_get_address_info")
                 br
                 a(href='/address/' + hashes.address) #{address}/address/#{hashes.address}
 
           li
               p
-                strong= t("translate.apt_get_qrcode")
+                strong= t("api.apt_get_qrcode")
                 br
-                em= t("translate.apt_get_qrcode_info")
+                em= t("api.apt_get_qrcode_info")
                 br
                 a(href='/qr/' + hashes.address) #{address}/qr/#{hashes.address}
 
