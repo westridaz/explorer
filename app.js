@@ -157,8 +157,8 @@ app.use('/ext/connections', function(req,res){
 
 //Masternodes 
 app.use('/ext/getmasternodes', function(req, res) {
-   lib.get_masternodes(function(masternodes){
-    res.send({data: masternodes});
+   db.get_masternodes(function(masternode){
+    res.send({data: masternode});
    });
 });
 

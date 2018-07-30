@@ -45,7 +45,9 @@ mongoose.connect(dbString, { useNewUrlParser: true } , function(err) {
           }
         });
       }, function() {
-        exit();
+        db.update_cronjob_run(settings.coin,{list_network_update: Math.floor(new Date() / 1000)}, function(cb) {
+          exit();
+          });
       });
     });
   }
