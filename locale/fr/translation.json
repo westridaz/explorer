@@ -76,7 +76,7 @@
         "recipients_address": "Bénéficiaires",
         "amount_coin": "Montant ({{coin, uppercase}})",
         "tooltip_get_tx": "Aller à la transaction",
-        "tooltip_raw_block_transaction": "Obtenir les données brutes de bloc",
+        "tooltip_raw_block_transaction": "Obtenir les données brutes de bloc"
     },
     "tx": {
         "txid_header": "{{coin , uppercase}} TxID: {{txid}}",
