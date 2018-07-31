@@ -281,11 +281,11 @@
         }
     },
     "language": {
-        "us": "englisch",
-        "de": "deutsch",
-        "fr": "français",
-        "ru": "русский",
-        "es": "español",
-        "it": "italiano"
-    }
+        "us": "English",
+        "de": "Deutsch",
+        "fr": "Français",
+        "ru": "Pусский",
+        "es": "Español",
+        "it": "Italiano"
+      }
 }
