@@ -24,7 +24,7 @@
         "H": " (H/s)"
       },
       "difficulty": "Schwierigkeitsgrad",
-      "masternode": "Master Knote",
+      "masternode": "Master Knoten",
       "masternode_plural": "Master Knoten",
       "coin_supply": "Münzenvorrat ({{coin, uppercase}})",
       "coin_price": "{{exchange, uppercase}} Preis"
@@ -50,9 +50,9 @@
     "warning": "Warnung! - {{error}}"
   },
   "address": {
-    "total_sent": "Insgesamt versendet {{coin, uppercase}}",
-    "total_received": "Insgesamt erhalten {{coin, uppercase}}",
-    "balance_coin": "Guthaben {{coin, uppercase}}",
+    "total_sent": "Insgesamt versendet ({{coin, uppercase}})",
+    "total_received": "Insgesamt erhalten ({{coin, uppercase}})",
+    "balance_coin": "Guthaben ({{coin, uppercase}})",
     "latest_transactions": "Neueste Transaktionen",
     "timestamp": "Zeitpunkt",
     "hash": "Hasch",
@@ -171,7 +171,7 @@
     "api_getnextrewardestimate_info": "Gibt eine Schätzung für die nächste Blockvergütung basierend auf dem aktuellen Stand der dezentralen Abstimmungsphase zurück.",
     "api_getnextrewardwhenstr": "getnextrewardwhenstr",
     "api_getnextrewardwhenstr_info": "Gibt einen String zurück, der beschreibt, wie lange es dauert, bis die Stimmen addiert werden und die nächste Blockvergütung berechnet wird.",
-    "api_calls_ext": "Erweiterte API BefehleI",
+    "api_calls_ext": "Erweiterte API Befehle",
     "api_calls_ext_info": "",
     "api_getmoneysupply": "getmoneysupply",
     "api_getmoneysupply_info": "Gibt den aktuellen Geldvorrat zurück.",
@@ -223,8 +223,8 @@
     "market_title": "{{market}} | {{coin, uppercase}} / {{exchange, uppercase}} | 24 Stunden",
     "sell_orders": "Verkauforder",
     "buy_orders": "Kauforder",
-    "price_coin": "Preis {{coin, uppercase}}",
-    "total_coin": "Summe {{coin, uppercase}}",
+    "price_coin": "Preis ({{coin, uppercase}})",
+    "total_coin": "Summe ({{coin, uppercase}})",
     "trade_history": "Handelshistorie",
     "order_type": "Order",
     "order_unknown": "N/V",
