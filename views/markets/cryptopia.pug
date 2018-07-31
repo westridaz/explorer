@@ -78,9 +78,9 @@ block market_view
         table.table.table-hover.history-table.table-bordered(cellspacing="0")
           thead
             tr
-              th.hidden-xs= t('market.order_type')
+            th.hidden-xs= t('market.order_type')
+              th= t('market.total_coin',{coin : marketdata.coin })              
               th= t('market.price_coin',{coin : marketdata.exchange })
-              th= t('market.total_coin',{coin : marketdata.coin })
               th= t('market.amount_coin',{coin : marketdata.exchange})
               th= t('market.timestamp')
           tbody

@@ -75,8 +75,8 @@ block market_view
           thead
             tr
               th.hidden-xs= t('market.order_type')
-              th= t('market.price_coin',{coin : marketdata.exchange })
               th= t('market.total_coin',{coin : marketdata.coin })
+              th= t('market.price_coin',{coin : marketdata.exchange })
               th= t('market.amount_coin',{coin : marketdata.exchange})
               th= t('market.timestamp')
           tbody
