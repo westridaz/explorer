@@ -43,7 +43,6 @@
         "block": "Bloc",
         "hash": "Condensat",
         "recipients": "Bénéficiaires",
-        "coin_supply": "Réserve monétaire ({{coin, uppercase}})",
         "timestamp": "Timestamp",
         "amount_coin": "Montant ({{coin, uppercase}})",
         "error": "Erreur ! - {{error}}",

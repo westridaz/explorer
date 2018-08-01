@@ -43,7 +43,6 @@
     "block": "Block",
     "hash": "Hash",
     "recipients": "Recipients",
-    "coin_supply": "Coin Supply ({{coin, uppercase}})",
     "timestamp": "Timestamp",
     "amount_coin": "Amount ({{coin, uppercase}})",
     "error": "Error! - {{error}}",

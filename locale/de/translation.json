@@ -43,7 +43,6 @@
     "block": "Block",
     "hash": "Hasch",
     "recipients": "Empfänger",
-    "coin_supply": "Münzenvorrat ({{coin, uppercase}})",
     "timestamp": "Zeitpunkt",
     "amount_coin": "Betrag ({{coin, uppercase}})",
     "error": "Fehler! - {{error}}",
