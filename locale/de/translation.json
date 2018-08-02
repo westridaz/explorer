@@ -200,14 +200,14 @@
     "balance": "Guthaben",
     "received": "Empfänger",
     "wealth_distribution": "Vermögensaufteilung",
-    "amount_coin": "Amount ({{coin, uppercase}})",
+    "amount_coin": "Summe ({{coin, uppercase}})",
     "top": "Top {{top}}",
     "total": "Gesamt",
     "balance_top": "Top {{top}} Guthaben",
     "address": "Addresse",
-    "balance_coin": "Guthaben {{coin, uppercase}}",
+    "balance_coin": "Guthaben ({{coin, uppercase}})",
     "percent_symbol": "%",
-    "received_coin": "Empfangen {{coin, uppercase}}",
+    "received_coin": "Empfangen ({{coin, uppercase}})",
     "received_top": "Top {{top}} Empfänger"
   },
   "market": {
