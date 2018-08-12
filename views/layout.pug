@@ -120,6 +120,11 @@ html
                 a.navbar-link(href='/network')
                   span.fa.fa-share-alt
                   span.menu-text= t('layout.navigation.network')
+            if settings.display.dnsseed == true
+              li#dnsseed
+                a.navbar-link(href='/dnsseed')
+                  span.glyphicon.glyphicon-tasks
+                  span.menu-text= t('layout.navigation.dnsseed')
             if settings.display.richlist == true
               li#richlist
                 a.navbar-link(href='/richlist')
@@ -130,11 +135,6 @@ html
                 a.navbar-link.loading(href='/markets/' + settings.markets.default)
                   span.fa.fa-line-chart
                   span.menu-text= t('layout.navigation.markets')
-            if settings.display.dnsseed == true
-              li#dnsseed
-                a.navbar-link(href='/dnsseed')
-                  span.glyphicon.glyphicon-tasks
-                  span.menu-text= t('layout.navigation.dnsseed')
             if settings.display.api == true
               li#info
                 a.navbar-link(href='/info')
