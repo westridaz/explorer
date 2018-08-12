@@ -133,6 +133,12 @@
     "ipstack_api_key": "Your API Key" 
   },
 
+  // Folder of the Dnsseed data from the DNS Seeder
+  "dnsseed":{
+    "pathDump": "/var/lib/dnsseed/dnsseed.dump",
+    "pathStats": "/var/lib/dnsseed/dnsseed.stats"
+  },
+
   // twitter, facebook, googleplus, bitcointalk, github, slack, website
   "twitter": "suprnurd",
   "facebook": "yourfacebookpage",

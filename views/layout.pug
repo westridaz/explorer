@@ -130,6 +130,11 @@ html
                 a.navbar-link.loading(href='/markets/' + settings.markets.default)
                   span.fa.fa-line-chart
                   span.menu-text= t('layout.navigation.markets')
+            if settings.display.dnsseed == true
+              li#dnsseed
+                a.navbar-link(href='/dnsseed')
+                  span.glyphicon.glyphicon-tasks
+                  span.menu-text= t('layout.navigation.dnsseed')
             if settings.display.api == true
               li#info
                 a.navbar-link(href='/info')

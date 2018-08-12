@@ -197,6 +197,10 @@ router.get('/masternodes', function(req, res) {
     res.render('masternodes', {active: 'masternodes'});
 });
 
+// dnsseed List
+router.get('/dnsseed', function(req, res) {
+  res.render('dnsseed', {active: 'dnsseed'});
+});
 
 router.get('/reward', function(req, res){
   //db.get_stats(settings.coin, function (stats) {

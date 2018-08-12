@@ -6,6 +6,7 @@
       "reward": "Vergütung",
       "movement": "Transaktionen",
       "masternodes": "Master Knoten",
+      "dnsseed": "Dnsseeds",
       "network": "Netzwerk",
       "difficulty": "Schwierigkeitsgrad",
       "richlist": "Top 100",
@@ -249,6 +250,21 @@
     "coinexchange": "CoinExchange",
     "graviex": "Graviex",
     "crex": "Crex24"
+  },
+  "dnsseed":{
+    "info":"This is a Livedata from the Dns seeder",
+    "dnsseed":"Dnsseed",
+    "address":"Host",
+    "good":"Good",
+    "lastsuccess":"Last Scanned",
+    "last_hours":"Online {{hours}} hours",
+    "last_day":"Online {{day}} day",
+    "last_days":"Online {{days}} days",
+    "blockheight":"Block Height",
+    "svcs":"SVCS",
+    "protocoll_version":"Protocoll",
+    "version":"Version",
+    "tooltip_download":"Export to Addnode List (TXT)"
   },
   "datatable":{
     "sEmptyTable":      "Keine Daten in der Tabelle vorhanden",

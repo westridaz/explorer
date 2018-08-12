@@ -6,6 +6,7 @@
             "reward": "Récompense",
             "movement": "Mouvement",
             "masternodes": "Masternodes",
+            "dnsseed": "Dnsseeds",
             "network": "Réseau",
             "difficulty": "Difficulté",
             "richlist": "Top 100",
@@ -250,6 +251,21 @@
         "graviex": "Graviex",
         "crex": "Crex24"
     },
+    "dnsseed":{
+        "info":"This is a Livedata from the Dns seeder",
+        "dnsseed":"Dnsseed",
+        "address":"Host",
+        "good":"Good",
+        "lastsuccess":"Last Scanned",
+        "last_hours":"Online {{hours}} hours",
+        "last_day":"Online {{day}} day",
+        "last_days":"Online {{days}} days",
+        "blockheight":"Block Height",
+        "svcs":"SVCS",
+        "protocoll_version":"Protocoll",
+        "version":"Version",
+        "tooltip_download":"Export to Addnode List (TXT)"
+      },
     "datatable": {
         "sProcessing": "Traitement en cours...",
         "sSearch": "Rechercher&nbsp;:",

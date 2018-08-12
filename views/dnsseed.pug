@@ -1,0 +1,77 @@
+extends layout
+
+block content   
+  script.
+ 
+  script.
+   function secondsToHms(d) {
+        d = Number(d);
+        var h = Math.floor(d / 3600);
+        var m = Math.floor(d % 3600 / 60);
+        var s = Math.floor(d % 3600 % 60);
+        var dy = Math.floor(h / 24);
+        var h = h % 24;
+        return ('0' + dy).slice(-2) + " day " + ('0' + h).slice(-2) + ":" + ('0' + m).slice(-2) + ":" + ('0' + s).slice(-2);
+    }
+    $(document).ready(function(){
+      var ctable = $('#dnsseed-table').dataTable( {  
+        language: { url: '/datatable/lang' },
+        autoWidth: true,      
+        searching: true,
+        ordering: true,
+       // order: [[ 4, 'desc' ],[ 7, 'asc' ]],
+        responsive: true,
+        lengthChange: true,
+        processing: true,
+        ajax: {
+          url: '/ext/getdnsseeder',
+          dataSrc: function ( json ) {
+            for ( var i=0;i<json.data.length; i++ ) {
+              json.data[i]['ipAddress'] = json.data[i]['ipAddress'] + ":" + json.data[i]['port'];
+              json.data[i]['lastSuccess'] = new Date((json.data[i]['lastSuccess']) * 1000).toLocaleString();
+            }
+            return json.data;
+          }
+        },
+        columns: [
+          { data: 'ipAddress', width: '3%' },
+          { data: 'good', width: '4%' },  
+          { data: 'lastSuccess', width: '3%' },
+          { data: 'last_2_hours', width: '4%' },  
+          { data: 'last_8_hours', width: '3%' },
+          { data: 'last_1_day', width: '4%' }, 
+          { data: 'last_7_days', width: '4%' },  
+          { data: 'last_30_days', width: '3%' },
+          { data: 'blockHeight', width: '4%' },   
+          { data: 'svcs', width: '4%' },  
+          { data: 'protocoll_version', width: '4%' },  
+          { data: 'version', width: '4%' }
+        ]
+      });
+    });
+
+  .col-xs-12.col-md-10.col-md-offset-1
+      .row.text-center(style='margin-bottom:15px;')
+        i= t('dnsseed.info')
+      .panel.panel-default
+        .panel-heading
+          strong= t('dnsseed.dnsseed')
+          a(href='/dnsseed/download')
+            span.glyphicon.glyphicon-download.pull-right(data-toggle='tooltip', data-placement='top', title= t('dnsseed.tooltip_download'))
+            span.pull-right(style="padding-right:10px;")=t('dnsseed.tooltip_download')
+        table#dnsseed-table.table.table-bordered.table-striped
+          thead
+            tr
+              th.text-center= t('dnsseed.address')
+              th.text-center= t('dnsseed.good')        
+              th.text-center= t('dnsseed.lastsuccess')
+              th.text-center= t('dnsseed.last_hours',{hours:2})
+              th.text-center= t('dnsseed.last_hours',{hours:8})
+              th.text-center= t('dnsseed.last_day',{day:1})
+              th.text-center= t('dnsseed.last_days',{days:7})
+              th.text-center= t('dnsseed.last_days',{days:30})
+              th.text-center= t('dnsseed.blockheight')
+              th.text-center= t('dnsseed.svcs')
+              th.text-center= t('dnsseed.protocoll_version')
+              th.text-center= t('dnsseed.version')
+          tbody.text-center
