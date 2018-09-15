@@ -3,22 +3,27 @@ var mongoose = require('mongoose')
 
 /*
  {
-        "rank" : 1,
-        "network" : "ipv4",
-        "txhash" : "fee56a4dfe86cdf22ef69687f0affa1afb4c8c81dad36a6aaa5c6ae72c7b14cc",
-        "outidx" : 0,
-        "status" : "ENABLED",
-        "addr" : "io49y5aa3sqQKSxQbZu5VcqUUZ8CitG6io",
-        "version" : 70810,
-        "lastseen" : 1532769342,
-        "activetime" : 5430494,
-        "lastpaid" : 1532763513
-    },
+    "rank": 1,
+    "ip": "103.13.29.36",
+    "port": 6565,
+    "network": "ipv4",
+    "txhash": "1866af0c24bd4169118ee32df412bfabe936267b2566b8be252c6aca7022df90",
+    "outidx": 1,
+    "status": "ENABLED",
+    "addr": "FTzsugc9FFK7BSw8o9tEfdRmQHFw6k6aN3",
+    "version": 70950,
+    "lastseen": 1536984573,
+    "activetime": 1516003,
+    "lastpaid": 1536978998
+  },
+
 */
 
 var MasternodeSchema = new Schema({
   
   rank: { type: Number, default: 0 },
+  ip: { type: String, default: "" },
+  port: { type: Number, default: 0 },
   network: { type: String, default: "" },
   txhash: { type: String, default: "" },
   outidx : { type: Number, default: 0},

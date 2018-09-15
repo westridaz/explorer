@@ -104,6 +104,7 @@
         "info": "Liste de tous les Master Nodes actuellement sur le réseau par ordre décroissant de dernière apparition",
         "masternode": "Master Node",
         "rank": "Rang de paiement",
+        "ip": "IP",
         "protocol": "Protocole",
         "address": "Adresse",
         "sub_version": "Sous-Version",

@@ -104,6 +104,7 @@
     "info": "Dies ist eine Liste aller Master Knoten, die sich derzeit im Netzwerk befinden, sortiert nach der Reihenfolge der zuletzt gesehenen Knoten von aktuell bis zuletzt.",
     "masternode": "Master Knoten",
     "rank": "Rang des Knotens",
+    "ip": "IP",
     "protocol": "Protokoll",
     "address": "Adresse",
     "sub_version": "Version",

@@ -104,6 +104,7 @@
     "info": "This is a list of all last seen Master Nodes currently on the network from current to last",
     "masternode": "Masternodes",
     "rank": "Pay rank",
+    "ip": "IP",
     "protocol": "Protocol",
     "address": "Address",
     "sub_version": "Sub-Version",

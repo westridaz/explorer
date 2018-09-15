@@ -34,6 +34,8 @@ mongoose.connect(dbString, { useNewUrlParser: true }, function (err) {
 
                         db.update_masternode({
                             rank: body[i].rank,
+                            ip: body[i].ip,
+                            port: body[i].port,
                             network: body[i].network,
                             txhash: body[i].txhash,
                             outidx: body[i].outidx,
@@ -50,6 +52,8 @@ mongoose.connect(dbString, { useNewUrlParser: true }, function (err) {
                         console.log('Masternode does not exists in DB ADD TXID:%s OUTIDX:%s', body[i].txhash, body[i].outidx);
                         db.create_masternode({
                             rank: body[i].rank,
+                            ip: body[i].ip,
+                            port: body[i].port,
                             network: body[i].network,
                             txhash: body[i].txhash,
                             outidx: body[i].outidx,

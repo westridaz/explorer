@@ -40,12 +40,14 @@ block content
                 json.data[i]['activetime'] = '<em>not available</em>';
 
               json.data[i]['addr'] = "<a href='/address/" + json.data[i]['addr'] + "'>" + json.data[i]['addr'] + "</a>";
+              json.data[i]['address'] =json.data[i]['ip'] + ":" + json.data[i]['port'];
             }
             return json.data;
           }
         },
         columns: [
           { data: 'rank', width: '3%' },
+          { data: 'address', width: '3%' },
           { data: 'network', width: '4%' },  
           { data: 'addr', width:'10%' },
           { data: 'version', width:'10%' },
@@ -88,6 +90,7 @@ block content
           thead
             tr
               th.text-center= t('masternodes.rank')
+              th.text-center= t('masternodes.ip')
               th.text-center= t('masternodes.protocol')        
               th.text-center= t('masternodes.address')
               th.text-center= t('masternodes.sub_version')
