@@ -2,6 +2,7 @@ var express = require('express')
   , router = express.Router()
   , settings = require('../lib/settings')
   , db = require('../lib/database')
+  , i18next = require('i18next')
   , lib = require('../lib/explorer')
   , qr = require('qr-image');
 
@@ -239,6 +240,10 @@ router.get('/address/:hash/:count', function(req, res) {
   route_get_address(res, req.param('hash'), req.param('count'));
 });
 
+router.get('/search',function(req, res) {
+  route_get_index(res, i18next.t('layout.search.no_results'));
+});
+
 router.post('/search', function(req, res) {
   var query = req.body.search;
   if (query.length == 64) {
@@ -253,7 +258,7 @@ router.post('/search', function(req, res) {
             if (block != 'There was an error. Check your console.') {
               res.redirect('/block/' + query);
             } else {
-              route_get_index(res, t('search.no_results',{query:query}));
+              route_get_index(res, i18next.t('layout.search.no_results',{query:query}));
             }
           });
         }
@@ -268,7 +273,7 @@ router.post('/search', function(req, res) {
           if (hash != 'There was an error. Check your console.') {
             res.redirect('/block/' + hash);
           } else {
-            route_get_index(res, t('tsearch.no_results',{query:query}));
+            route_get_index(res, i18next.t('layout.search.no_results',{query:query}));
           }
         });
       }
