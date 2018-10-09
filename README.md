@@ -1,13 +1,19 @@
-Ciquidus Alpha - 1.7.1
+
+[![Discord](https://img.shields.io/discord/102860784329052160.svg?style=plastic)](https://discord.gg/axDqQs)
+
+
+![Image of Ipsum](https://ipsum.network/images/logo-ipsum-coin-blue.png)
+
+Ipsum Explorer - 1.7.3
 ================
 
-The Chaincoin block explorer.
+The Ipsum Explorer block explorer.
 
 This project is a fork of [Iquidus Explorer](https://github.com/iquidus/explorer) so massive thanks go out to Luke Williams for his code! Thank you!!!
 
 ### See it in action
 
-*  [explorer.chaincoin.org](https://explorer.chaincoin.org)
+*  [explorer.ipsum.network](https://explorer.ipsum.network)
 
 
 ### Requires
@@ -36,7 +42,7 @@ Create user with read/write access:
 
 ### Get the source
 
-    git clone https://github.com/suprnurd/ciquidus explorer
+    git clone https://github.com/Aviator-Coding/ips-explorer.git explorer
 
 ### Install node modules
 
@@ -105,8 +111,9 @@ The wallet connected to Ciquidus must be running with atleast the following flag
 
 ### Donate
     
-    CHC: CLkWg5YSLod772uLzsFRxHgHiWVGAJSezm
-    BTC: 1J8Chi5teDJrvBtSuQhioNCHfTNBCcCrPx
+    IPS: ibu7DNVsPWGsKynNmvEi7nnLkTGNeY5wPq
+    BTC: 1PQyATXe7fDMUtfPRtrNE8H9RcqU3mt8rg
+    LTC: LXeRa12UGJjRucRfQ4aT4Wq8juAkN1wzPA
 
 ### Known Issues
 **Database Querys are slow.**
@@ -144,6 +151,7 @@ Where [SIZE] is an integer higher than the default.
 
 ### License
 
+Copyright (c) 2018, The IPSUM Community 
 Copyright (c) 2017, The Chaincoin Community  
 Copyright (c) 2015, Iquidus Technology  
 Copyright (c) 2015, Luke Williams  
