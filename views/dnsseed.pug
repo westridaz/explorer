@@ -29,6 +29,7 @@ block content
             for ( var i=0;i<json.data.length; i++ ) {
               json.data[i]['ipAddress'] = json.data[i]['ipAddress'] + ":" + json.data[i]['port'];
               json.data[i]['lastSuccess'] = new Date((json.data[i]['lastSuccess']) * 1000).toLocaleString();
+              json.data[i]['good'] = (json.data[i]['good'] == "1") ? "GOOD" : "BAD";
             }
             return json.data;
           }
