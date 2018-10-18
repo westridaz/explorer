@@ -18,6 +18,12 @@ html
     script(src='//cdn.datatables.net/plug-ins/725b2a2115b/integration/bootstrap/3/dataTables.bootstrap.js')
     script(src='/javascripts/chart.js') 
     script.
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-K2HNS3H');
+    script.
       $(document).ready(function(){
         $('##{active}').addClass('active');
         function update_stats(){
@@ -55,6 +61,7 @@ html
         update_stats();
       });
   body
+    iframe(src='https://www.googletagmanager.com/ns.html?id=GTM-K2HNS3H', height='0', width='0', style='display:none;visibility:hidden')
     - function format_unixtime(unixtime) {
       - var a = new Date(unixtime*1000);
       - var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
