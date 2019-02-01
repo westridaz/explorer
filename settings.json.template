@@ -20,7 +20,7 @@
   "language_fallback" : "us",
   
   // logo
-  "logo": "/images/ipsum_logo.png",
+  "logo": "/images/logo.png",
 
   // favicon
   "favicon": "public/favicon.ico",
@@ -30,7 +30,7 @@
   //     Cerulean, Cosmo, Cyborg, Darkly, Flatly, Journal, Lumen, Paper,
   //     Readable, Sandstone, Simplex, Slate, Spacelab, Superhero, United, Yeti
   // theme (see /public/themes for available themes)
-  "theme": "Slate",
+  "theme": "Superhero",
 
   // port to listen for requests on.
   "port" : 3001,
@@ -51,9 +51,9 @@
   // wallet settings
   "wallet": {
     "host": "localhost",
-    "port": 11995,
-    "user": "chaincoinrpc",
-    "pass": "123gfjk3R3pCCVjHtbRde2s5kzdf233sa"
+    "port": 10000,
+    "user": "user",
+    "pass": "pass"
   },
 
   // confirmations
@@ -64,8 +64,8 @@
 
   // menu settings
   "display": {
-    "api": true,
-    "markets": true,
+    "api": false,
+    "markets": false,
     "richlist": true,
     "twitter": true,
     "facebook": false,
@@ -140,7 +140,7 @@
   },
 
   // twitter, facebook, googleplus, bitcointalk, github, slack, website
-  "twitter": "suprnurd",
+  "twitter": "theprojectmerge",
   "facebook": "yourfacebookpage",
   "googleplus": "yourgooglepluspage",
   "bitcointalk": "yourbitcointalktopicvalue",
@@ -168,7 +168,7 @@
   // HEAVY: retreive from heavys getsupply api call
   // BALANCES : total of all address balances
   // TXOUTSET : retreive from gettxoutsetinfo api call
-  "supply": "TXOUTSET",
+  "supply": "GETINFO",
 
   // how to acquire network hashrate
   // getnetworkhashps: uses getnetworkhashps api call, returns in GH/s
