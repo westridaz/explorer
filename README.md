@@ -1,19 +1,12 @@
-
-[![Discord](https://img.shields.io/discord/102860784329052160.svg?style=plastic)](https://discord.gg/axDqQs)
-
-
-![Image of Ipsum](https://ipsum.network/images/logo-ipsum-coin-blue.png)
-
-Ipsum Explorer - 1.7.3
 ================
 
-The Ipsum Explorer block explorer.
+The Merge Explorer block explorer.
 
 This project is a fork of [Iquidus Explorer](https://github.com/iquidus/explorer) so massive thanks go out to Luke Williams for his code! Thank you!!!
 
 ### See it in action
 
-*  [explorer.ipsum.network](https://explorer.ipsum.network)
+*  [merge.chaintools.me](https://merge.chaintools.me)
 
 
 ### Requires
@@ -34,7 +27,7 @@ Create databse:
 
 Create user with read/write access:
 
-    > db.createUser( { user: "ciquidus", pwd: "3xp!0reR", roles: [ "readWrite" ] } )
+    > db.createUser( { user: "explorer", pwd: "3xp!0reR", roles: [ "readWrite" ] } )
 
 *note: If you're using mongo shell 2.4.x, use the following to create your user:
 
@@ -42,7 +35,7 @@ Create user with read/write access:
 
 ### Get the source
 
-    git clone https://github.com/Aviator-Coding/ips-explorer.git explorer
+    git clone https://github.com/westridaz/explorer.git explorer
 
 ### Install node modules
 
