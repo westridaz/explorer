@@ -35,11 +35,11 @@ Create user with read/write access:
 
 ### Get the source
 
-    git clone https://github.com/westridaz/explorer.git explorer
+    git clone https://github.com/westridaz/explorer.git explorer/
 
 ### Install node modules
 
-    cd explorer && npm install --production
+    cd explorer/ && npm install --production
 
 ### Configure
 
